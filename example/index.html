@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="../dist/index.js" type="text/javascript"></script>
+  </head>
+  <body>
+    <div
+      id="html-content"
+      style="width: 100%; border: 1px solid slateblue;float:left;"
+    >
+  </body>
+  <script>
+    const testJsonObject = {
+      element: "div",
+      attributes: {
+        id: "id-1",
+        class: "demo-class",
+        tabindex: "1",
+        style: "border: 4px solid #d8d8d8;background-color: #9443ff26;padding: 4px;"
+      },
+      htmlText: "I am a single json object. I am the outer div. I am the grand mother. I will appearing before child elements",
+      htmlTextPosition: 0,
+      children: [
+        {
+          element: "p",
+          htmlText: "I am first level decendant. I am the mother.",
+          children: [
+            {
+              element: "p",
+              htmlText: "I am second level decendant. I am the daughter."
+            }
+          ]
+        }
+      ]
+    };
+
+    const testJsonArr = [
+      { element: "br" },
+      {
+        element: "div",
+        attributes: {
+          id: "id-1",
+          class: "demo-class",
+          tabindex: "1",
+          style: "border: 4px solid #d8d8d8;background-color: #9443ff26;padding: 4px;"
+        },
+        htmlText: "We are part of array of json object. I have two children nodes. I will appear after all my children. To Add us, you have to use a loop.",
+        htmlTextPosition: "-1",
+        children: [
+          {
+            element: "p",
+            htmlText: "I am the first child."
+          },
+          {
+            element: "p",
+            htmlText: "I am the second child."
+          }
+        ]
+      },
+      {
+        element: "div",
+        attributes: {
+          id: "id-1",
+          class: "demo-class",
+          tabindex: "1",
+          style: "border: 4px solid #d8d8d8;background-color: #9443ff26;padding: 4px;"
+        },
+        htmlText: "We are part of array of json object. I have one child node. I will appear before my child. To Add us, you have to use a loop.",
+        children: [
+          {
+            element: "p",
+            htmlText: "I am first level decendant. I am the mother.",
+            children: [
+              {
+                element: "p",
+                htmlText: "I am second level decendant. I am the daughter."
+              }
+            ]
+          }
+        ]
+      },
+      { element: "br" }
+    ];
+
+    const testJsonForm = {
+      element: "form",
+      attributes: {
+        id: "test-form",
+        class: "test-form-class",
+        attributes: {
+          style: "display: block; width: 100%;"
+        }
+      },
+      children: [
+        {
+          element: "h3",
+          htmlText: "A Simple Form",
+          attributes: {
+            style:"text-align: center;"
+          }
+        },
+        {
+          element: "div",
+          attributes: {
+            style: "width: 300px;margin: 0px auto;background-color: #efe3ff;border: 1px solid gray;padding: 20px;"
+          },
+          children: [
+          {
+          element: "div",
+          attributes: {
+            class: "form-items-wrapper",
+            style: "margin-bottom: 12px;"
+          },
+          children: [
+            {
+              element: "label",
+              attributes: {
+                for: "name",
+                class: "form-label-class",
+                style: "width: 55px;display: block;float: left;"
+              },
+              htmlText: "Name"
+            },
+            {
+              element: "input",
+              attributes: {
+                id: "name",
+                class: "form-input-class",
+                type: "text",
+                value: "",
+                placeholder: "Enter Name",
+                style:"width: calc( 100% - 60px);"
+              }
+            }
+          ]
+        },
+        {
+          element: "div",
+          attributes: {
+            class: "form-items-wrapper",
+            style: "margin-bottom: 12px;"
+          },
+          children: [
+            {
+              element: "label",
+              attributes: {
+                for: "email",
+                class: "form-label-class",
+                style: "width: 55px;display: block;float: left;"
+              },
+              htmlText: "E Mail"
+            },
+            {
+              element: "input",
+              attributes: {
+                id: "email",
+                class: "form-input-class",
+                type: "email",
+                value: "",
+                placeholder: "Enter Address",
+                style:"width: calc( 100% - 60px);"
+              }
+            }
+          ]
+        },
+        {
+          element: "button",
+          attributes: {
+            type: "submit",
+            style: "width: 80px;padding: 4px;font-weight: bold;margin: 0px auto;display: block;"
+          },
+          htmlText: "Submit"
+        }
+          ]
+        }
+      ]
+    };
+
+    var testString = {
+      element: "<div><h1>Hello! World</h1><span><i>We were part of basic html format</i></span><hr/></div>"
+    };
+
+    var htmlContent = document.getElementById("html-content");
+
+    htmlContent.append(toHtml(JSON.stringify(testString)));
+    htmlContent.append(toHtml(testJsonObject));
+    toHtml(testJsonArr).forEach(element => {
+      htmlContent.append(element);
+    });
+    htmlContent.append(toHtml(testJsonForm));
+  </script>
+</html>

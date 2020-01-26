@@ -1,0 +1,5 @@
+{
+  "exec": "npm run build",
+  "watch": ["src/*"],
+  "ext": "js, json"
+}

@@ -1,0 +1,28 @@
+{
+  "name": "from-json-to-html",
+  "version": "1.0.0",
+  "description": "This package will help to convert specific json schema to html.",
+  "main": "./dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "babel ./src --out-dir dist",
+    "dev": "nodemon"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/biswa8998/from-json-to-html.git"
+  },
+  "author": "Biswadeep Dey",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/biswa8998/from-json-to-html/issues"
+  },
+  "homepage": "https://github.com/biswa8998/from-json-to-html#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.8.3",
+    "@babel/core": "^7.8.3",
+    "@babel/node": "^7.8.3",
+    "@babel/preset-env": "^7.8.3",
+    "nodemon": "^2.0.2"
+  }
+}
