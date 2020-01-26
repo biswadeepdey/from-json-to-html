@@ -1,6 +1,6 @@
 {
   "name": "from-json-to-html",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "This package will help to convert specific json schema to html.",
   "main": "./lib/index.min.js",
   "scripts": {
