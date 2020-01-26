@@ -2,12 +2,12 @@
   "name": "from-json-to-html",
   "version": "1.0.0",
   "description": "This package will help to convert specific json schema to html.",
-  "main": "./dist/index.min.js",
+  "main": "./lib/index.min.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "babel ./src --out-dir dist",
-    "clean": "rimraf ./dist/index.js",
-    "compress": "uglifyjs ./dist/index.js -o ./dist/index.min.js --compress --mangle --source-map",
+    "build": "babel ./src --out-dir lib",
+    "clean": "rimraf ./lib/index.js",
+    "compress": "uglifyjs ./lib/index.js -o ./lib/index.min.js --compress --mangle --source-map",
     "build--n-compress": "npm-run-all build compress clean",
     "dev": "nodemon"
   },
